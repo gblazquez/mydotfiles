@@ -1,0 +1,25 @@
+# Comments and blank lines are allowed.
+# This is based on the default built-in stow-local-ignore of stow. Modify it if
+# you want to add more files to ignore
+
+RCS
+.+,v
+
+CVS
+\.\#.+       # CVS conflict files / emacs lock files
+\.cvsignore
+
+\.svn
+_darcs
+\.hg
+
+\.git
+\.gitignore
+\.gitmodules
+
+.+~          # emacs backup files
+\#.*\#       # emacs autosave files
+
+^/README.*
+^/LICENSE.*
+^/COPYING

@@ -1,0 +1,122 @@
+--
+-- vim keymaps
+--
+
+-- buffers keymaps
+vim.keymap.set("n", "gt", ":bn<cr>")
+vim.keymap.set("n", "gT", ":bp<cr>")
+vim.keymap.set("n", "g1", ":b1<cr>")
+vim.keymap.set("n", "g2", ":b2<cr>")
+vim.keymap.set("n", "g3", ":b3<cr>")
+vim.keymap.set("n", "g4", ":b4<cr>")
+vim.keymap.set("n", "g5", ":b5<cr>")
+vim.keymap.set("n", "g6", ":b6<cr>")
+vim.keymap.set("n", "g7", ":b7<cr>")
+vim.keymap.set("n", "g8", ":b8<cr>")
+vim.keymap.set("n", "g9", ":b9<cr>")
+vim.keymap.set("n", "<leader>q", ":bd<cr>")
+
+-- yank to clippboard
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+
+--
+-- vim options
+--
+
+-- enable line numbers
+vim.opt.nu = true
+
+-- relative line numbers
+vim.opt.relativenumber = true
+
+-- number of space characters as a tab
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+
+-- Indent spaces when press enter
+vim.opt.shiftwidth = 4
+
+-- convert tabs into spaces
+vim.opt.expandtab = true
+
+-- auto indentation
+vim.opt.autoindent = true
+
+-- vim.opt.list = true -- show tab characters and trailing whitespace
+
+-- do not highlight all matches on previous search pattern
+vim.opt.hlsearch = false
+
+-- incrementally highlight searches as you type
+vim.opt.incsearch = true
+
+-- enable true color support
+vim.opt.termguicolors = true
+
+-- minimum number of lines to keep above and below the cursor
+vim.opt.scrolloff = 8
+
+--minimum number of columns to keep above and below the cursor
+vim.opt.sidescrolloff = 8
+
+-- trailling spaces removed when written
+-- vim.g.editorconfig.trim_trailing_whitespace = true
+
+-- moving lines
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
+
+-- splitting
+vim.keymap.set("n", "<leader>s", ":split<cr>")
+vim.keymap.set("n", "<leader>v", ":vsplit<cr>")
+
+-- spelling
+vim.opt.spelllang = "en_us"
+vim.opt.spell = false
+
+-- python formatting
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+	pattern = "*.py",
+	callback = function()
+		vim.opt.textwidth = 79
+		vim.opt.colorcolumn = "79"
+	end,
+})
+
+-- javascript formatting
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+	pattern = { "*.js", "*.html", "*.css", "*.lua" },
+	callback = function()
+		vim.opt.tabstop = 2
+		vim.opt.softtabstop = 2
+		vim.opt.shiftwidth = 2
+	end,
+})
+
+-- return to last edit position when opening files
+vim.api.nvim_create_autocmd("BufReadPost", {
+	pattern = "*",
+	callback = function()
+		if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
+			vim.cmd('normal! g`"')
+		end
+	end,
+})
+
+-- Remove trailing spaces
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = { "*.py", "*.js", "*.lua" }, -- only for these files
+	command = [[%s/\s\+$//e]],
+	desc = "Remove trailing spaces when written",
+})
+
+-- spelling
+vim.api.nvim_create_autocmd("BufRead", {
+	pattern = { "*.tex", "*.txt", "*.md" }, -- only for these files
+	callback = function()
+		vim.opt_local.spell = true
+	end,
+	desc = "Enable spellcheck for defined files",
+})
