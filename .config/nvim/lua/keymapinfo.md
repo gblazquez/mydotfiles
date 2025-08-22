@@ -1,15 +1,13 @@
 # Keymap info
 
+Follow this convention for naming keymaps after <leader>:
 
-In order to see all the keymaps, make <leader>tk
-
-Follow this convention after <leader>:
-
-- g -> go
-- p -> pretty format
-- d -> display
-- f -> find
-- m -> markdown
-- w -> workspace
-- h -> hunk
-- z -> zen
+- g -> Go
+- p -> Pretty format
+- d -> Display
+- f -> Find
+- m -> Markdown
+- w -> Workspace
+- i -> gIt
+- z -> Zen
+- x -> Open trouble diagnostic

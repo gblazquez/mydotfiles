@@ -14,6 +14,6 @@ return {
 		-- Is this keymap working?
 	end,
 	config = function()
-		vim.keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<cr>")
+		vim.keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<cr>", { desc = "Markdown Preview" })
 	end,
 }

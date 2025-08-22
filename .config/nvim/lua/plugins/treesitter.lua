@@ -17,6 +17,8 @@ return {
 				"lua",
 				"python",
 				"vim",
+        -- Dont try latex, does not work.
+        --"latex",
 				"gitignore",
 				"bash",
 				"markdown",
@@ -24,6 +26,9 @@ return {
         "html",
         "c",
 			},
+      sync_install = false,
+      auto_install = false,
+      ignore_install = {},
 			highlight = { enable = true },
 			indent = { enable = true },
 		})

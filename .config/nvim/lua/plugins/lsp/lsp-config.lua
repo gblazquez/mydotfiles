@@ -30,20 +30,20 @@ return {
 			filetypes = { "latex", "tex" },
 		})
 
-		-- Show information
+		-- Displays information
 		vim.keymap.set("n", "<leader>di", vim.lsp.buf.hover, {desc= "Display information" })
 
 		-- Opens the file where the object is defined
 		vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition"})
 
 		-- Shows where the object is used in the file and other files
-		vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "go to reference"})
+		vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to reference"})
 
 		-- Displays a menu with code actions regarding the diagnostic
 		vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions"})
 
-		-- Show diagnostic
-		vim.keymap.set("n", "<leader>dd", vim.diagnostic.open_float, { desc = "display diagnostic"})
+		-- Displays diagnostic
+		vim.keymap.set("n", "<leader>dd", vim.diagnostic.open_float, { desc = "Display diagnostic"})
 
 		-- Navigate diagnostic
 		-- no need to set these keymaps, they are automatically asigned

@@ -15,17 +15,16 @@ return {
 			-- Another way to define keymaps
 			-- local builtin = require("telescope.builtin")
 			-- vim.keymap.set("n", "<leader>fz", builtin.live_grep, {})
-			vim.keymap.set("n", "<leader>ff", ":Telescope find_files<cr>")
-			vim.keymap.set("n", "<leader>fi", ":Telescope git_files<cr>")
-			vim.keymap.set("n", "<leader>fw", ":Telescope live_grep<cr>")
-			vim.keymap.set("n", "<leader>fo", ":Telescope oldfiles<cr>")
-			vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find todos" })
-
+			vim.keymap.set("n", "<leader>ff", ":Telescope find_files<cr>", { desc = "Find files" })
+			vim.keymap.set("n", "<leader>fi", ":Telescope git_files<cr>", { desc = "Find files tracked by Git" })
+			vim.keymap.set("n", "<leader>fw", ":Telescope live_grep<cr>", { desc = "Find word" })
+			vim.keymap.set("n", "<leader>fo", ":Telescope oldfiles<cr>", { desc = "Find old file" })
+			vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find keymaps" })
+			-- The next function is for defining fw in visual mode, which fuzzy finds the selected text
 			function vim.getVisualSelection()
 				vim.cmd('noau normal! "vy"')
 				local text = vim.fn.getreg("v")
 				vim.fn.setreg("v", {})
-
 				text = string.gsub(text, "\n", "")
 				if #text > 0 then
 					return text
@@ -33,18 +32,9 @@ return {
 					return ""
 				end
 			end
-
 			local keymap = vim.keymap.set
 			local tb = require("telescope.builtin")
-			local opts = { noremap = true, silent = true }
-
-			-- keymap("n", "<space>g", ":Telescope current_buffer_fuzzy_find<cr>", opts)
-			-- keymap("v", "<space>g", function()
-			-- 	local text = vim.getVisualSelection()
-			-- 	tb.current_buffer_fuzzy_find({ default_text = text })
-			-- end, opts)
-
-			-- keymap("n", "<space>G", ":Telescope live_grep<cr>", opts)
+			local opts = { noremap = true, silent = true, desc = "Find word" }
 			keymap("v", "<space>fw", function()
 				local text = vim.getVisualSelection()
 				tb.live_grep({ default_text = text })

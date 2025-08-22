@@ -12,7 +12,7 @@ return {
         enable = true,
       }
     }
-    vim.keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<cr>")
+    vim.keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<cr>", { desc = "Open explorer"})
   end
 }
 
