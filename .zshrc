@@ -92,8 +92,14 @@ alias ls='ls --color'
 alias nv='nvim'
 alias c='clear'
 alias q="exit"
-alias l='ls -lsrth'
+# See function l at the end of this file
+alias l='lt 1'
+alias la='lta 1'
+# fuzzy grep
 alias fzg='rg "" | fzf'
+# fuzzy find and open
+alias fzo='open "$(fzf)"'
+
 
 # utils
 # these are not working in zsh.
@@ -107,7 +113,7 @@ alias openlast='open *(.-om[1])'
 alias cleantex='rm -r *.toc *.aux *.log *.cp *.fn *.tp *.vr *.pg *.ky *.bbl *.fls *.fdb_latexmk *.blg *.gls *glg *ist *out *lot *lof *glo'
 
 # Load alias specific to system
-source .zsh_sysalias
+source "$HOME/.sysalias"
 
 # Custom functions
 function countdown {
@@ -181,4 +187,14 @@ function todo {
 function cplast {
     copy_path="$1"
     cp `ls -tr | tail -1` $copy_path
+}
+
+function lt {
+    level="$1"
+    eza -s=modified -l -T -L $level
+}
+
+function lta {
+    level="$1"
+    eza -s=modified -la -T -L $level
 }
