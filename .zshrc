@@ -115,10 +115,10 @@ alias radio_activate="source /home/guille/py_envs/radio310/bin/activate"
 alias bowpy_activate="source /home/guille/py_envs/bowpy/bin/activate"
 
 # Opening software
-alias casa="/home/guille/Softwares/casa-6.6.3-22-py3.8.el8/bin/casa"
-alias casaviewer="/home/guille/Softwares/casa-6.6.3-22-py3.8.el8/bin/casaviewer"
-alias almaotC11="cd /home/guille/Softwares/ALMAOT-C11-2024; ./ALMA-OT.sh"
-alias obsidian="/home/guille/Softwares/Obsidian-1.7.7.AppImage"
+alias casa="/home/guille/Software/casa-6.6.3-22-py3.8.el8/bin/casa"
+alias casaviewer="/home/guille/Software/casa-6.6.3-22-py3.8.el8/bin/casaviewer"
+alias almaotC11="cd /home/guille/Software/ALMAOT-C11-2024; ./ALMA-OT.sh"
+alias obsidian="/home/guille/Software/Obsidian-1.7.7.AppImage"
 
 # utils
 alias nvzshrc='nv /home/guille/.zshrc'
