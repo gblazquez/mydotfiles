@@ -1,26 +1,4 @@
 --
--- vim keymaps
---
-
--- buffers keymaps
---
-vim.keymap.set("n", "gt", ":bn<cr>", { desc = "Go to next buffer" })
-vim.keymap.set("n", "gT", ":bp<cr>", { desc = "Go to previous buffer" })
-vim.keymap.set("n", "g1", ":b1<cr>", { desc = "Go to buffer 1" })
-vim.keymap.set("n", "g2", ":b2<cr>", { desc = "Go to buffer 2" })
-vim.keymap.set("n", "g3", ":b3<cr>", { desc = "Go to buffer 3" })
-vim.keymap.set("n", "g4", ":b4<cr>", { desc = "Go to buffer 4" })
-vim.keymap.set("n", "g5", ":b5<cr>", { desc = "Go to buffer 5" })
-vim.keymap.set("n", "g6", ":b6<cr>", { desc = "Go to buffer 6" })
-vim.keymap.set("n", "g7", ":b7<cr>", { desc = "Go to buffer 7" })
-vim.keymap.set("n", "g8", ":b8<cr>", { desc = "Go to buffer 8" })
-vim.keymap.set("n", "g9", ":b9<cr>", { desc = "Go to buffer 9" })
-vim.keymap.set("n", "<leader>q", ":bd<cr>", { desc = "Close buffer " })
-
--- yank to clippboard
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], {desc = "Yank to system clipboard"})
-
---
 -- vim options
 --
 
@@ -63,19 +41,52 @@ vim.opt.sidescrolloff = 8
 -- trailling spaces removed when written
 -- vim.g.editorconfig.trim_trailing_whitespace = true
 
+-- spelling
+vim.opt.spelllang = "en_us"
+vim.opt.spell = false
+
+--
+-- vim keymaps
+--
+
+-- buffers keymaps
+vim.keymap.set("n", "gt", ":bn<cr>", { desc = "Go to next buffer" })
+vim.keymap.set("n", "gT", ":bp<cr>", { desc = "Go to previous buffer" })
+vim.keymap.set("n", "g1", ":b1<cr>", { desc = "Go to buffer 1" })
+vim.keymap.set("n", "g2", ":b2<cr>", { desc = "Go to buffer 2" })
+vim.keymap.set("n", "g3", ":b3<cr>", { desc = "Go to buffer 3" })
+vim.keymap.set("n", "g4", ":b4<cr>", { desc = "Go to buffer 4" })
+vim.keymap.set("n", "g5", ":b5<cr>", { desc = "Go to buffer 5" })
+vim.keymap.set("n", "g6", ":b6<cr>", { desc = "Go to buffer 6" })
+vim.keymap.set("n", "g7", ":b7<cr>", { desc = "Go to buffer 7" })
+vim.keymap.set("n", "g8", ":b8<cr>", { desc = "Go to buffer 8" })
+vim.keymap.set("n", "g9", ":b9<cr>", { desc = "Go to buffer 9" })
+vim.keymap.set("n", "<leader>q", ":bd<cr>", { desc = "Close buffer " })
+-- tabs
+vim.keymap.set("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
+vim.keymap.set("n", "<leader>tq", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
+vim.keymap.set("n", "<leader>tb", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+-- splitting
+-- Remember C-w-s and C-w-v
+-- vim.keymap.set("n", "<leader>s", ":split<cr>", { desc = "Split window"})
+-- vim.keymap.set("n", "<leader>v", ":vsplit<cr>", { desc = "Split window vertically"})
+vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
+-- vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+
+-- yank to clippboard
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], {desc = "Yank to system clipboard"})
+
 -- moving lines
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line up"}) -- move line up(n)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line down"}) -- move line down(n)
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line up (v)"}) -- move line up(v)
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line down (v)"}) -- move line down(v)
 
--- splitting
-vim.keymap.set("n", "<leader>s", ":split<cr>", { desc = "Split window"})
-vim.keymap.set("n", "<leader>v", ":vsplit<cr>", { desc = "Split window vertically"})
 
--- spelling
-vim.opt.spelllang = "en_us"
-vim.opt.spell = false
+--
+-- Format
+--
 
 -- python formatting
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
