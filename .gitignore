@@ -3,14 +3,12 @@
 ############################
 
 
-# Impotant
+# Added by you:
 .sysalias
 .config/tmux/plugins/
 .config/alacritty/themes/
+TODO.md
 
-# Added by you:
-*workspace
-*old
 
 # Git cannot commit empty folder, so add exceptions .gitkeep files
 !*/.gitkeep
