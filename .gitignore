@@ -6,6 +6,7 @@
 # Impotant
 .sysalias
 .config/tmux/plugins/
+.config/alacritty/themes/
 
 # Added by you:
 *workspace
