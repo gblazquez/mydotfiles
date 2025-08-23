@@ -90,6 +90,8 @@ return {
 			diagnostics = {
 				enable = true,
 			},
+      -- Important! By default ignored files by git are not displayed in the tree
+			filters = { git_ignored = false },
 		})
 		vim.keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<cr>", { desc = "Open explorer" })
 	end,
