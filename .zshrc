@@ -95,10 +95,11 @@ alias q="exit"
 # See function l at the end of this file
 alias l='lt 1'
 alias la='lta 1'
-# fuzzy grep
-alias fzg='rg "" | fzf'
-# fuzzy find and open
-alias fzo='open "$(fzf)"'
+# find file and open
+alias ff='open "$(fzf)"'
+# find word
+alias fw='rg "" | fzf'
+
 
 
 # utils

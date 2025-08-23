@@ -31,7 +31,7 @@ return {
 			dashboard.button("fw", "  > Find word", "<cmd>Telescope live_grep<CR>"),
       dashboard.button("r", "  > Recently opened files"   , ":Telescope oldfiles<CR>"),
 			dashboard.button("wr", "󰁯  > Restore Session For Current Directory", "<cmd>SessionRestore<CR>"),
-      dashboard.button("ws", "🗄 > Sessions", ":SessionSearch<CR>"),
+      dashboard.button("wl", "🗄 > Sessions", ":SessionSearch<CR>"),
       dashboard.button("p", "󰂖  > Lazy Plugins", "<Cmd>Lazy<CR>"),
       dashboard.button("m", "🛠 > Mason Packages", ":Mason<CR>"),
       -- ☭
