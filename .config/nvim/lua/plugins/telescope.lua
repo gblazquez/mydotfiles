@@ -18,8 +18,11 @@ return {
 			vim.keymap.set("n", "<leader>ff", ":Telescope find_files<cr>", { desc = "Find files" })
 			vim.keymap.set("n", "<leader>fi", ":Telescope git_files<cr>", { desc = "Find files tracked by Git" })
 			vim.keymap.set("n", "<leader>fw", ":Telescope live_grep<cr>", { desc = "Find word" })
-			vim.keymap.set("n", "<leader>fr", ":Telescope oldfiles<cr>", { desc = "Find recent files" })
+			vim.keymap.set("n", "<leader>fo", ":Telescope oldfiles<cr>", { desc = "Find old files" })
 			vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find keymaps" })
+			vim.keymap.set("n", "<leader>fm", ":Telescope man_pages<cr>", { desc = "Find man pages" })
+			vim.keymap.set("n", "<leader>fr", ":Telescope registers<cr>", { desc = "Find registers" })
+			vim.keymap.set("n", "<leader>fc", ":Telescope commands<cr>", { desc = "Find commands" })
 			-- The next function is for defining fw in visual mode, which fuzzy finds the selected text
 			function vim.getVisualSelection()
 				vim.cmd('noau normal! "vy"')

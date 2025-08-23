@@ -5,6 +5,7 @@
 
 # Impotant
 .sysalias
+.config/tmux/plugins/
 
 # Added by you:
 *workspace

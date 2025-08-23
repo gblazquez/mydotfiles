@@ -2,12 +2,15 @@
 
 Follow this convention for naming keymaps after <leader>:
 
-- g -> Go
-- p -> Pretty format
+- c -> code action
 - d -> Display
 - f -> Find
-- m -> Markdown
-- w -> Workspace
+- g -> Go
 - i -> gIt
-- z -> Zen
+- m -> Markdown
+- p -> Pretty format
+- s -> split
+- t -> tab
+- w -> Workspace
 - x -> Open trouble diagnostic
+- z -> Zen

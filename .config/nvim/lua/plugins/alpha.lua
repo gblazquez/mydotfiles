@@ -12,7 +12,7 @@ return {
     end
 
 		-- Set header
-		dashboard.section.header.val = {
+    dashboard.section.header.val = {
 			"                                                     ",
 			"  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
 			"  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
@@ -35,9 +35,11 @@ return {
       dashboard.button("p", "󰂖  > Lazy Plugins", "<Cmd>Lazy<CR>"),
       dashboard.button("m", "🛠 > Mason Packages", ":Mason<CR>"),
       -- ☭
+      dashboard.button( "s", "  > Settings" , ":cd $HOME/.config/nvim | :tabnew lua/vim-options.lua | :NvimTreeToggle <CR>"),
 			dashboard.button("q", "  > Quit NVIM", "<cmd>qa<CR>"),
 		}
     dashboard.section.footer.val = footer()
+    -- dashboard.section.header.val = footer()
     dashboard.section.footer.opts.hl = "Constant"
 
 		-- Send config to alpha
