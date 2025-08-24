@@ -129,7 +129,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- spelling
 vim.api.nvim_create_autocmd("BufRead", {
-	pattern = { "*.tex", "*.txt", "*.md" }, -- only for these files
+	pattern = { "*.tex", "*.txt", "*.md", "*.rst" }, -- only for these files
 	callback = function()
 		vim.opt_local.spell = true
 	end,
