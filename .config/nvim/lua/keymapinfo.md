@@ -14,3 +14,4 @@ Follow this convention for naming keymaps after <leader>:
 - w -> Workspace
 - x -> Open trouble diagnostic
 - z -> Zen
+- z -> Also for spelling (z= and zg)

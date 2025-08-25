@@ -90,6 +90,7 @@ export LS_COLORS
 # abbreviations
 alias ls='ls --color'
 alias nv='nvim'
+alias nvdiff='nvim -d'
 alias c='clear'
 alias q="exit"
 # See function l at the end of this file
