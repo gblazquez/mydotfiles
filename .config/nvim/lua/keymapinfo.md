@@ -9,7 +9,7 @@ Follow this convention for naming keymaps after <leader>:
 - i -> gIt
 - m -> Markdown
 - p -> Pretty format
-- s -> split
+- s -> split, spectre
 - t -> tab
 - w -> Workspace
 - x -> Open trouble diagnostic
